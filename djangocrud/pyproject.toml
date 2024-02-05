@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "djangocrud"
+version = "1.0"
+dependencies = [
+  "dj-database-url",
+  "django==3.2.*",
+  "gunicorn",
+  "psycopg2",
+  "whitenoise",
+]
+
+[project.optional-dependencies]
+dev = [
+  "black",
+  "django-stubs",
+  "ipdb",
+  "pip-tools",
+  "ruff",
+]
+
+[project.scripts]
+"manage.py" = "myproject:django_manage"
