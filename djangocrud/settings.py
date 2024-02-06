@@ -152,3 +152,5 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+TATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
