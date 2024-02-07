@@ -87,7 +87,8 @@ def complete_task(request, task_id):
     task = get_object_or_404(Task, pk=task_id, user=request.user)
 
     if request.method == 'POST':
-        task.datecompleted = timezone.now()
+       # task.datecompleted = timezone.now()
+        task.datecompleted = timezone.get_current_timezone()
         task.save()
         return redirect('tasks')
 
@@ -96,8 +97,7 @@ def delete_task(request, task_id):
     task = get_object_or_404(Task, pk=task_id, user=request.user)
 
     if request.method == 'POST':
-      #  task.datecompleted = timezone.now()
-        task.datecompleted = timezone.get_current_timezone()
+        task.datecompleted = timezone.now()
         task.delete()
         return redirect('tasks')
 
