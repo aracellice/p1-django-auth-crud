@@ -23,7 +23,7 @@
                        
                         <p>{{task.important}}</p>
             
-                        <p>{{task.datecompleted|date:'M j Y H:M'}}</p>
+                        <p>{{task.datecompleted|fecha_hora_lima.strftime("%a %b %d %H:%M:%S %Y %Z")}}</p>
                       
                 </a>
                 {% endfor %}
